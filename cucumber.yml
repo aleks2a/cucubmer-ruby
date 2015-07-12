@@ -1,0 +1,10 @@
+
+
+
+
+
+
+simple: --tags @simple --format html --out report.html --format pretty
+entire_feature: --tags @my_tag
+a_and_b: --tags @aaa --tags @bbb
+a_or_b: --tags @aaa,@bbb
