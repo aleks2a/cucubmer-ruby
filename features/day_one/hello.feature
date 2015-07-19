@@ -6,7 +6,7 @@ Feature: Introduction to Cucumber
     Given I print in terminal Hello World
   @bbb @aaa
   Scenario: Print in terminal my name
-    Given I print in terminal name Aleks
+
 
   Scenario: scenario with parameters
     Given I print in terminal name "Aleks"
