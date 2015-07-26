@@ -4,6 +4,8 @@ Before do
 end
 
 After do |scenario|
+  sleep 1
+  @browser.quit
   #execute any code after each scenario
   # scenario.failed?
   #take screenshot
