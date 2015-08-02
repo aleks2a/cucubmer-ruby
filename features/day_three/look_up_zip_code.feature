@@ -7,6 +7,7 @@ Feature: Test look up a zip code page
     Then I should see Valid city error message
     Then I should see Valid state error message
 
+  @debug
   Scenario: Happy path for Look up a zip code
     Given I open browser and navigate to "http://usps.com"
     Then I navigate to USPS Look up Zip Code page

@@ -1,8 +1,7 @@
 
-
-
 Given(/^I open browser and navigate to "([^"]*)"$/) do |url|
   @browser = Selenium::WebDriver.for :firefox
+  @browser.manage.timeouts.implicit_wait = 5
   @browser.navigate.to url
 end
 
@@ -34,7 +33,7 @@ And(/^I should be signed\-in as user "([^"]*)"$/) do |name|
 end
 
 Then(/^I navigate to USPS Look up Zip Code page$/) do
-  @browser.find_element(:css, "a.quick-tools-solo--link.quick-tools-solo--zip").click
+  @browser.find_element(:css, "a.quick-tools--link.quick-tools--zip").click
 end
 
 And(/^I press Find Zip code button$/) do
@@ -63,12 +62,14 @@ Then(/^I select "([^"]*)" from states drop down list$/) do |state|
   @browser.find_element(:css, "span.select-current-text").click
   state_list = @browser.find_element(:css, "ul.select-ul").find_elements(:tag_name, "a")
 
-  state_list.each do |element|
-    if element.text == state
-      element.click
-      break
-    end
-  end
+  # state_list.each do |element|
+  #   if element.text == state
+  #     element.click
+  #     break
+  #   end
+  # end
+
+  state_list.find{|element| element.text == state}.click
 
 end
 
