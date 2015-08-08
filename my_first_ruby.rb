@@ -1,4 +1,8 @@
 class PageActions
+  attr_reader :browser
+  # attr_writer :browser
+  # attr_accessor :browser
+
   def initialize browser
     @browser = browser
   end
@@ -9,6 +13,7 @@ class PageActions
 end
 
 class USPS < PageActions
+
   def zip_code_page
     ZipCodePage.new @browser
   end
@@ -43,4 +48,6 @@ usps.login_page.wait_for_elements
 
 usps.wait_for_elements
 
-# puts usps.browser
+puts usps.browser
+
+
