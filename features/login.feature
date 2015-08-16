@@ -7,3 +7,9 @@ Feature: Login functionality
     And I type "Root123456@" as a password
     Then I click on Signin button
     And I should be signed-in as a user "Aleks"
+
+  Scenario: Login with valid credentials(using nested step)
+    #run at home
+    Given I navigate to home page
+    Given I should be signed in with "bayqatraining@gmail.com" and "Root123456@"
+

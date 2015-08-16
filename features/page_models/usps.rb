@@ -1,12 +1,15 @@
 class USPS < PageActions
 
   def home_page
-    HomePage.new @browser
+    @home_page ||= HomePage.new @browser
   end
 
   def login_page
-    LoginPage.new @browser
+    @login_page ||= LoginPage.new @browser
   end
 
+  def find_zip_code_page
+    @find_zip_code_page ||= FindZipCodePage.new @browser
+  end
 
 end

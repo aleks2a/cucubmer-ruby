@@ -23,3 +23,12 @@ And(/^I should be signed\-in as a user "([^"]*)"$/) do |name|
   expect(usps.home_page.login_button.text).to be == "Hi, #{name}"
 
 end
+
+Given(/^I should be signed in with "([^"]*)" and "([^"]*)"$/) do |login, password|
+  steps %{
+    Then I click on login button
+    And I type "#{login}" as a login
+    And I type "#{password}" as a password
+    Then I click on Signin button
+    }
+end
