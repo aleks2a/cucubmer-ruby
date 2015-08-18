@@ -12,4 +12,8 @@ class USPS < PageActions
     @find_zip_code_page ||= FindZipCodePage.new @browser
   end
 
+  def calculate_price
+    @calculate_price ||= CalculatePrice.new @browser
+  end
+
 end

@@ -5,7 +5,7 @@ class FindZipCodePage < PageActions
   end
 
   def address_text_field
-    @browser.find_element(:id, "tAddress")
+    @browser.find_element(id:, "tAddress")
   end
 
   def city_text_field
@@ -28,8 +28,16 @@ class FindZipCodePage < PageActions
   end
 
   def find_zip_code_button
-    @browser.find_element(:id, "lookupZipFindBtn")
+    @brwser.find_element(:id, "lookupZipFindBtn")
   end
 
+  def table_results
+    @browser.find_element(:id, "result-list").find_elements(:tag_name, "li")
+  end
 
+end
+
+def collect_zip_codes
+  zip_array = []
+  table_results.each {|result| zip_array << result.findElement(:css, "span.zip").text}
 end

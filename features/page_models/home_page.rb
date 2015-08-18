@@ -1,4 +1,3 @@
-require_relative "page_actions"
 class HomePage < PageActions
 
   def path
@@ -9,8 +8,8 @@ class HomePage < PageActions
     @browser.find_element(:id, "anchor-login")
   end
 
-
-
-
+  def calculate_price
+    @browser.find_element(:xpath, ("//a[@class='quick-tools--link quick-tools--calcprice' and text() = \"Calculate a Price\"]"))
+  end
 
 end
