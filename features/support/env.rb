@@ -1,5 +1,7 @@
 require "selenium-webdriver"
 require "rspec"
+require_relative "../page_models/page_actions.rb"
+Dir["../page_models/*.rb"].each {|file| require file }
 
 
 SERVER_LABELS = {

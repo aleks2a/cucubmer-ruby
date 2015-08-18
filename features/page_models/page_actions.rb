@@ -1,5 +1,7 @@
 class PageActions
 
+  include RSpec::Matchers
+
   def initialize browser
     @browser = browser
   end
@@ -12,7 +14,7 @@ class PageActions
     #original location for path: HomePage class
     initial_url = self.path
     #initial_url == "http://www.usps.com"
-    initial_url.gsub!("usps.com", "integration.usps.com")
+    initial_url.gsub!("usps.com", get_environment)
    end
 
 
