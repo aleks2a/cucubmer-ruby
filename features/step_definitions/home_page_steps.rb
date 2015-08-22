@@ -1,5 +1,5 @@
 Then(/^I press calculate a price link$/) do
-  usps.home_page.calculate_price.click
+  usps.home_page.calculate_prise.click
 end
 
 
