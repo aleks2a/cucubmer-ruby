@@ -31,5 +31,19 @@ class FindZipCodePage < PageActions
     @browser.find_element(:id, "lookupZipFindBtn")
   end
 
+  def table_result
+    @browser.find_element(:id, "result-list").find_elements(:tag_name, "li")
+  end
+
+  def collect_zip_codes
+    zip_array = []
+    table_result.each {|result| zip_array << result.find_element(:css, "span.zip").text}
+  end
+
+
+
+
+
+
 
 end
