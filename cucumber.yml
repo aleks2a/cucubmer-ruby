@@ -1,3 +1,4 @@
 login: --tags @login --format html --out report.html --format pretty
 zip_code: --tags @zip_code --format html --out report.html
 
+api: --format junit --out junit_format --format html --out report.html --format pretty --tags @api
